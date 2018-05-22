@@ -11,6 +11,5 @@ sudo yum update -y
 #Create a test file in users home directory
 {
   echo 'This installation has worked'
-  echo 'Victor Biga'
   echo 'file has been created'
 } >test.txt
