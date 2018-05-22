@@ -8,14 +8,7 @@
 #Run the update to make sure repository contains all the latest apps
 sudo yum update -y
 
-#Create a test file in users home directory
-{
-  echo 'This installation has worked'
-  echo 'file has been created'
-} >test.txt
-
 #Installing NGINX
-
 #Add Nginx Repository
 sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E '%{rhel}').noarch.rpm -y
 #Install Nginx
@@ -29,3 +22,8 @@ sudo firewall-cmd --reload
 #Nginx to start when system boots
 sudo systemctl enable nginx
 
+#Create a test file in users home directory
+{
+  echo 'This installation has worked'
+  echo 'file has been created'
+} >/home/ec2-user/test.txt
