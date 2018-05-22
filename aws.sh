@@ -9,6 +9,8 @@
 sudo yum update -y
 
 #Create a test file in users home directory
-cat > /home/ec2-user/text_file.txt 
-some text in the text_file.txt
-
+{
+  echo 'This installation has worked'
+  echo 'Victor Biga'
+  echo 'file has been created'
+} >test.txt
