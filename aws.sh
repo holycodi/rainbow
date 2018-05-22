@@ -6,9 +6,9 @@
 #Version info   : 1.0
 
 #Run the update to make sure repository contains all the latest apps
-sudo yum update
+sudo yum update -y
 
 #Create a test file in users home directory
-cat > text_file.txt 
+cat > /home/ec2-user/text_file.txt 
 some text in the text_file.txt
 
