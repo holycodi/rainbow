@@ -17,9 +17,9 @@ sudo yum update -y
 #Installing NGINX
 
 #Add Nginx Repository
-sudo yum install epel-release
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E '%{rhel}').noarch.rpm -y
 #Install Nginx
-sudo yum install nginx
+sudo yum install nginx -y
 #Start Nginx
 sudo systemctl start nginx
 #allow HTTP and HTTPS traffic
