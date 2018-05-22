@@ -1,5 +1,5 @@
 #!/bin/bash
-#Script Name	:AWS + NGINX                                                                                            
+#Script Name	:AWS EC2 user command + NGINX                                                                                            
 #Description	:This will install linux on aws and install and configure NGINX                                                                               
 #Author       	:Victor Biga                                                
 #Email         	:victor.biga@gmail.com                                           
@@ -25,5 +25,5 @@ sudo systemctl enable nginx
 #Create a test file in users home directory
 {
   echo 'This installation has worked'
-  echo 'file has been created'
+  echo 'File has been created'
 } >/home/ec2-user/test.txt
