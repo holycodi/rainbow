@@ -1,17 +1,31 @@
 #!/bin/bash
-#Script Name	:AWS EC2 user command + jenkins
+#Script Name	:AWS EC2 user command + jenkins + nginx
 #Description	:This will install linux on aws and install and configure NGINX                                                                               
 #Author       	:Victor Biga                                                
 #Email         	:victor.biga@gmail.com                                           
-#Version info   : 1.0
+#Version info   :1.0
+#Test date      :
+#Test result    :NA
 
 #Run the update to make sure repository contains all the latest apps
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E '%{rhel}').noarch.rpm -y
 sudo yum update -y
-#Add the Jenkins repo
-sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkinsci.org/redhat/jenkins.repo
-#Import a key file from Jenkins-CI to enable installation from the package
-sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
-#Install Jenkins
+
+
+#Jenkins install
+sudo yum install java-1.8.0-openjdk.x86_64 -y
+sudo cp /etc/profile /etc/profile_backup
+echo 'export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk' | sudo tee -a /etc/profile
+echo 'export JRE_HOME=/usr/lib/jvm/jre' | sudo tee -a /etc/profile
+source /etc/profile
+cd ~ 
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 sudo yum install jenkins -y
-#Start Jenkins as a service
-sudo systemctl jenkins start
+sudo systemctl start jenkins.service
+sudo systemctl enable jenkins.service
+sudo chmod a+rwx /var/lib/jenkins/secrets/
+sudo chmod a+rwx /var/lib/jenkins/secrets/initialAdminPassword
+cat /var/lib/jenkins/secrets/initialAdminPassword>/home/ec2-user/jenkins_initial_password
+
+
