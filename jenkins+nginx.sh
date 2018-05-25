@@ -19,6 +19,7 @@ curl -O https://raw.githubusercontent.com/victorbiga/rainbow/master/jenkins.sh
 chmod +x jenkins.sh 
 exec ./jenkins.sh
 
+#set proxy forwarding from port 80 to port 8080 to access jenkins on the host directly
 cd /etc/nginx/
 curl -O https://raw.githubusercontent.com/victorbiga/rainbow/master/nginx.conf
 cd
