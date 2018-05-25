@@ -9,11 +9,13 @@
 #Test result    :NA
 
 
-wget -O https://raw.githubusercontent.com/victorbiga/rainbow/master/jenkins.sh
+curl -O https://raw.githubusercontent.com/victorbiga/rainbow/master/jenkins.sh
 chmod +x jenkins.sh | exec ./jenkins.sh
 
-wget -O https://raw.githubusercontent.com/victorbiga/rainbow/master/nginx.sh
-chmod +x nginx.sh | exec ./nginx.sh
+#install nginx
+curl -O https://raw.githubusercontent.com/victorbiga/rainbow/master/nginx.sh
+chmod +x nginx.sh 
+exec ./nginx.sh
 rm *
 
 cd /etc/nginx/
