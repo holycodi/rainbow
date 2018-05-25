@@ -8,18 +8,17 @@
 #Test date      :
 #Test result    :NA
 
-
-curl -O https://raw.githubusercontent.com/victorbiga/rainbow/master/jenkins.sh
-chmod +x jenkins.sh | exec ./jenkins.sh
-
 #install nginx
 curl -O https://raw.githubusercontent.com/victorbiga/rainbow/master/nginx.sh
 chmod +x nginx.sh 
 exec ./nginx.sh
 rm *
 
+#install jenkins
+curl -O https://raw.githubusercontent.com/victorbiga/rainbow/master/jenkins.sh
+chmod +x jenkins.sh 
+exec ./jenkins.sh
+
 cd /etc/nginx/
 curl -O https://raw.githubusercontent.com/victorbiga/rainbow/master/nginx.conf
-
-
-
+cd
