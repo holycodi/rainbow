@@ -1,6 +1,6 @@
 #!/bin/bash
 #Script Name	:AWS EC2 user command + jenkins + nginx
-#Description	:This will install linux on aws and install and configure NGINX                                                                               
+#Description	:This will install linux on aws and install and configure NGINX
 #Author       	:Victor Biga                                                
 #Email         	:victor.biga@gmail.com                                           
 #Version info   :1.0
