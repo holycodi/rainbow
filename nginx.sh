@@ -1,6 +1,6 @@
 #!/bin/bash
-#Script Name	  :NGINX install
-#Description	  :This will install NGINX                                                                               
+#Script Name	:NGINX install
+#Description	:This will install NGINX                                                                               
 #Author       	:Victor Biga                                                
 #Email         	:victor.biga@gmail.com                                           
 #Version info   : 1.0
