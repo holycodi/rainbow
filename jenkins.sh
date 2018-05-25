@@ -22,8 +22,8 @@ cd ~
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 sudo yum install jenkins -y
-sudo systemctl start jenkins.service
-sudo systemctl enable jenkins.service
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
 sudo chmod a+rwx /var/lib/jenkins/secrets/
 sudo chmod a+rwx /var/lib/jenkins/secrets/initialAdminPassword
 cat /var/lib/jenkins/secrets/initialAdminPassword>/home/ec2-user/jenkins_initial_password
