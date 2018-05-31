@@ -7,6 +7,7 @@
 #Test date      :
 #Test result    :NA
 
+
 #Run the update to make sure repository contains all the latest apps
 sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E '%{rhel}').noarch.rpm -y
 sudo yum update -y
