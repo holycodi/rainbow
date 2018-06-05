@@ -1,0 +1,16 @@
+#!/bin/bash
+#Script Name	:AWS IAM NEW USER
+#Description	:This will create new IAM group user and query for the created AWS configure keys
+#Author       	:Victor Biga                                                
+#Email         	:victor.biga@gmail.com                                           
+#Version info   : 1.0
+
+
+# Create a new user and create a new profile
+aws iam create-user --user-name bruno \ 
+    --query 'AccessKey.[AccessKeyID,SecretAccessKey]' \
+    --output text)
+access_key_id=$(echo $credentials | cut -d' ` -f 1)
+secret_access_key=$(echo $credentials | cut -d' ` -f2)
+aws configure set profile.bruno.aws_access_key_id "$access_key_id"
+aws configure set profile.bruno.secret_access_key "$access_key_id"
